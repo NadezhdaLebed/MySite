@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Загадки</title>
+  <link rel="stylesheet" href="style.css"> 
+  <script type="text/javascript">
+  function checkAnswer(id, trueAnswer)
+  {
+    var userAnswer = document.getElementById(id).value;
+    if (userAnswer == trueAnswer)
+      return true;
+    else
+    return false;
+  }
+  function checkAnswers()
+  {
+    var goodAnswers = 0;
+
+    if (checkAnswer('puzzle1', 'комета'))
+      goodAnswers++;
+
+    if (checkAnswer('puzzle2', 'телескоп'))
+      goodAnswers++;
+
+    if (checkAnswer('puzzle3', 'гагарин'))
+      goodAnswers++;
+
+    if (checkAnswer('puzzle4', 'луна'))
+      goodAnswers++;
+
+    if (goodAnswers == 0)
+      alert('Вы ничего не угадали');
+
+    else 
+      alert('Количество правильных ответов: ' + goodAnswers);
+  }  
+  </script>
+</head>
+<body>
+  <div id="content">
+        <div id="header">
+            <a href="#">Главная</a> <span>/</span>
+            <a href="zagadki.html">Загадки</a> <span>/</span>
+            <a href="#">Угадайка</a> <span>/</span>
+            <a href="#">Угадайка мультиплеер</a>
+        </div>
+    <h1>Отгадай загадки!</h1>
+    <div id="center"> 
+    <p>Сверкая огромным хвостом в темноте. Несется среди ярких звезд в пустоте, она не звезда, не планета, загадка Вселенной - </p>
+    <input type="text" id="puzzle1" />
+    </br></br></br>
+    <p>Есть специальная труба, в ней Вселенная видна, видят звезд калейдоскоп. Астрономы в … </p>
+    <input type="text" id="puzzle2" />
+    </br></br></br>
+    <p>Самый первый в Космосе летел с огромной скоростью. Отважный русский парень, наш космонавт … </p>
+    <input type="text" id="puzzle3" />
+    </br></br></br>
+    <p>Освещает ночью путь, звездам не дает заснуть, пусть все спят, ей не до сна, в небе не заснет … </p>
+    <input type="text" id="puzzle4" />
+    </br></br></br>
+    <input type="button" value="Ответить" onClick="checkAnswers()" />
+  </div>
+  </div>
+  <div id="footer">Copyright © 2016 <a href="https://geekbrains.ru/" target="_blank">GeekBrains</a></div>
+</body>
+</html>
